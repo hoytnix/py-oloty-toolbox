@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys, requests
 
 def download(url, file_path):

@@ -114,18 +114,6 @@ document.write('%s<\/a>');
 
     return html
 
-def text_to_entity(text=''):
-    text = '<a href="https://github.com/pr0xmeh"><i class="fa fa-4x fa-github" style="color:#000"></i></a>'
-    out = ''
-
-    for char in text:
-        if char in entities:
-            out += entities[char]
-        else:
-            out += char
-
-    print(out)
-
 def main():
 
     import argparse
@@ -139,5 +127,4 @@ def main():
     print(MailTo(email = args.email))
 
 if __name__ == '__main__':
-    text_to_entity()
     main()

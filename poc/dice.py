@@ -1,7 +1,6 @@
 from random import uniform
 from time   import sleep
-import hmac
-import hashlib
+import hmac, hashlib
 
 def roll(hash_server, hash_client):
   # Hash, hash, pl0x.
