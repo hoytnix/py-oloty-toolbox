@@ -39,6 +39,8 @@ Scripts:
 
 `cidr.py`: generates a list of IPs from a cidr range, useful for firewalls.
 
+`color.pl`: outputs 256-colors, for testing your terminal.
+
 `image_offset.py`: centers a rectangle within a rectangle; I use it for editing in Blender.
 
 `pwd.py`: generates a psuedo-random string.
