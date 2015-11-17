@@ -2,7 +2,7 @@
 '''
     Jsondb - Persistent data-storage with Json.
 
-    @version pre-release
+    @version v0.x.1
     @python 3.4
     @author Michael Hoyt / pr0xmeh (github.com/pr0xmeh)
 '''
@@ -43,7 +43,7 @@ class Jsondb:
         # db-object.
         self.db = {}
         if not self.load():
-            raise CriticalException
+            raise CriticalException(Exception("Error on load."))
 
     def load(self):
         if self.mode == 'w+': # Does not exist yet / over-write.
@@ -61,6 +61,8 @@ class Jsondb:
         except Exception as e:
             raise UnkownException(e)
             return False
+
+        return True
 
     def save(self):
         # Cast data for serialization.
