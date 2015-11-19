@@ -41,16 +41,15 @@ class Jsondb:
             self.encoding = encoding
 
         # db-object.
-        self.db = {}
-        if not self.load():
-            raise CriticalException(Exception("Error on load."))
-
-    def load(self):
-        if self.mode == 'w+': # Does not exist yet / over-write.
+        if self.mode == 'w+':
+            self.db = {}
             with open(self.f, 'w+', encoding=self.encoding) as f:
                 self.save()
-                return True
+        else:
+            if not self.load():
+                raise CriticalException(Exception("Error on load."))
 
+    def load(self):
         try:
             with open(self.f, 'r', encoding=self.encoding) as f:
                 data = json.load(f)
